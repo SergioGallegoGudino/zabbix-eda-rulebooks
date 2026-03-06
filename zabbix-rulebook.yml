@@ -1,0 +1,12 @@
+---
+- name: Zabbix → EDA Test Rulebook
+  hosts: all
+
+  sources:
+    - ansible.eda.webhook: {}
+
+  rules:
+    - name: Print incoming Zabbix event
+      condition: event.payload is defined
+      action:
+        debug:
