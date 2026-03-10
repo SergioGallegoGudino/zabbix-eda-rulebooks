@@ -13,7 +13,7 @@
     host_zabbix_api_port: 80
     host_zabbix_api_use_ssl: false
     host_zabbix_api_validate_certs: false
-    host_zabbix_api_token: "{{ 3e3e9d8719c6b31349cf1603bf172dd385cac5e58ea330fdfc3a50172a4569da }}"    # viene del Credential en AAP
+    host_zabbix_api_token: "3e3e9d8719c6b31349cf1603bf172dd385cac5e58ea330fdfc3a50172a4569da"    # viene del Credential en AAP
 
     # --- HOST CONFIG ---
     host_name: "Ansible Automation Platform"
