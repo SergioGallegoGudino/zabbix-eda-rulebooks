@@ -1,0 +1,41 @@
+---
+- name: Crear/actualizar host en Zabbix usando rol oficial
+  hosts: localhost
+  gather_facts: false
+  collections:
+    - zabbix.zabbix
+
+  vars:
+    ansible_connection: local
+
+    # --- API ZABBIX ---
+    host_zabbix_api_server: "192.168.6.21"   # o la IP/FQDN de tu Zabbix
+    host_zabbix_api_port: 80
+    host_zabbix_api_use_ssl: false
+    host_zabbix_api_validate_certs: false
+    host_zabbix_api_token: "{{ 3e3e9d8719c6b31349cf1603bf172dd385cac5e58ea330fdfc3a50172a4569da }}"    # viene del Credential en AAP
+
+    # --- HOST CONFIG ---
+    host_name: "Ansible Automation Platform"
+    host_visible_name: "Servidor Prueba Automatizado"
+    host_description: "Host gestionado por Ansible AAP"
+
+    host_hostgroups:
+      - "Linux servers"
+
+    host_templates:
+      - "Linux by Zabbix agent"
+
+    host_interfaces:
+      - type: agent
+        ip: "192.168.6.27"
+        dns: ""
+        useip: true
+        port: 10050
+
+    host_tags:
+      - { tag: "managed", value: "AAP" }
+
+  roles:
+    - role: zabbix.zabbix.host
+
