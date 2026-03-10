@@ -11,7 +11,7 @@
     # --- API ZABBIX ---
     host_zabbix_api_server: "192.168.6.21"   # o la IP/FQDN de tu Zabbix
     host_zabbix_api_port: 80
-    zabbix_api_server_url: "http://192.168.6.21/zabbix"
+    host_zabbix_api_url: "zabbix"
     host_zabbix_api_use_ssl: false
     host_zabbix_api_validate_certs: false
     host_zabbix_api_token: "3e3e9d8719c6b31349cf1603bf172dd385cac5e58ea330fdfc3a50172a4569da"    # viene del Credential en AAP
