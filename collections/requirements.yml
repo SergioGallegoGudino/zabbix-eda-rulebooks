@@ -1,6 +1,7 @@
 ---
 # Collection dependencies
 collections:
+  - name: zabix.zabix
   - name: ansible.utils
     version: '>=2.8.0'
   - name: ansible.posix
